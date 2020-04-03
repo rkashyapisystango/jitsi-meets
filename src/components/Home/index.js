@@ -17,9 +17,12 @@ const Home = (props) => {
 
   function startConference() {
     try {
-     const domain = 'meet.jit.si';
+    //  const domain = '35.208.134.182';
+    //  const domain = 'meet.jit.si';
+     const domain = 'jitsi-sys-demo.tk';
      const options = {
-      roomName: 'Testing',
+      roomName: 'systango-jitsidemo',
+      // roomName: 'roomName',
       height: 600,
       parentNode: document.getElementById('jitsi-container'),
       interfaceConfigOverwrite: {
@@ -31,6 +34,18 @@ const Home = (props) => {
       },
       configOverwrite: {
        disableSimulcast: false,
+       startWithVideoMuted: true,
+       constraints: {
+            video: {
+                aspectRatio: 16 / 9,
+                height: {
+                    ideal: 720,
+                    max: 720,
+                    min: 240
+                }
+            }
+        },
+    
       },
      };
   
